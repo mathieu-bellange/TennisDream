@@ -6,9 +6,7 @@
 		<groupId>org.mbellange</groupId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>org.mbellange</groupId>
 	<artifactId>frontend-td</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	
 	<dependencies>
 		
@@ -29,11 +27,7 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>generateManualRunner</goal>
-							<goal>resources</goal>
-							<goal>testResources</goal>
 							<goal>test</goal>
-							<goal>preparePackage</goal>
 						</goals>
 					</execution>
 				</executions>

@@ -1,0 +1,15 @@
+<appender name="log-file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+   <file>my-application.log</file>
+   <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <!-- only log problems, not debugging info -->
+      <level>WARN</level>
+   </filter>
+   <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- rotate every day for log collection and archiving -->
+      <fileNamePattern>tennis-dream.%d{yyyyMMdd}.log</fileNamePattern>
+   </rollingPolicy>
+   <encoder>
+      <!-- only log 2 lines of stack trace per cause of an exception -->
+      <pattern>%d{yyyy/MM/dd HH:mm:ss,SSS} [%thread] %-5level %logger{36} - %m %throwable{2}%n</pattern>
+   </encoder>
+</appender>

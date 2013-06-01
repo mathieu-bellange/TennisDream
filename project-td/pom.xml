@@ -4,4 +4,8 @@
   <artifactId>project-td</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <modules>
+  	<module>frontend-td</module>
+  	<module>bakend-td</module>
+  </modules>
 </project>
