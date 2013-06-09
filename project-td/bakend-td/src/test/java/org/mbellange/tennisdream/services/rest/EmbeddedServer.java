@@ -12,7 +12,8 @@ public class EmbeddedServer extends ExternalResource {
 	@Override
 	protected void before() throws Throwable {
 		server = new Server(port);
-		server.addHandler(new WebAppContext("src/main/webapp", "/"));
+		WebAppContext context = new WebAppContext("src/main/webapp", "/");
+		server.addHandler(context);
 		server.start();
 	}
 
@@ -20,7 +21,8 @@ public class EmbeddedServer extends ExternalResource {
 	protected void after() {
 		try {
 			server.stop();
-		} catch (Throwable t) {}
+		} catch (Throwable t) {
+		}
 	}
 
 	public String uri() {
