@@ -1,0 +1,50 @@
+#mainContent {
+	margin-top: 44px;
+	margin-bottom: 22px;
+	padding-bottom: 22px;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: "OpenSans", "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+	font-style: normal;
+	color: #222222;
+	text-rendering: optimizeLegibility;
+	line-height: 1.1;
+	margin-bottom: 14px;
+	margin-top: 14px;
+}
+
+
+header {
+	background-color: #2ba6cb;
+}
+
+header h1 a.main-title {
+	color: #fff;
+	font-weight: 500;
+}
+
+.article li {
+	padding: 0 10px 10px;
+	display: block;
+	width: 25%;
+	float:left;
+}
+
+.services {
+	padding: 0 15px;
+}
+
+.contacts {
+	padding: 0 15px;
+}
+.combo-search {
+	float:left;
+	width:25%;
+	margin: 0 10px;
+}
+.sub-title{
+	color: #2795b6;
+}

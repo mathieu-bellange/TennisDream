@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr" ng-app>
+<head>
+<meta charset="utf-8">
+<title>Tennis Dream</title>
+<link rel="stylesheet" href="css/foundation.min.css">
+<link rel="stylesheet" href="css/foundation.css">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="lib/angular/angular.js"></script>
+<script src="js/controllers.js"></script>
+</head>
+<body ng-controller="ArticleListCtrl">
+	<header>
+		<div class="row">
+			<div class="large-12 columns">
+				<h1>
+					<a class="main-title" href="./welcome.html">Tennis Dream</a>
+				</h1>
+				<h4></h4>
+			</div>
+		</div>
+	</header>
+	<section id="mainContent" class="example">
+		<div class="row">
+			<div class="large-12 columns">
+				<h2 class="sub-title">Catalogue</h2>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<form action="">
+					<select ng-model="brand" class="medium combo-search">
+						<option ng-repeat="brand in brands" value={{brand.id}}>{{brand.nom}}</option>
+					</select> 
+					<select id="type" class="medium combo-search"></select> 
+					<select
+						id="note" class="medium  combo-search"></select> 
+						<a href="#"
+						class="tiny button">Rechercher</a>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<ul class="block-grid four-up article">
+					<li ng-repeat="art in article"><a href="#"><img
+							src="http://placehold.it/240x300"></a>
+						<h5>
+							<a href="#">{{art.nom}}</a>
+						</h5></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<footer class="row">
+		<section class="large-9 columns contacts">
+			<h6>
+				<strong>Développé par Mathieu Bellange</strong>
+			</h6>
+			<p>
+				Site web développé pour le CNAM, UE NFE114 : Système d'information
+				et web.<br /> <a href="http://www.w3.org/">Html5</a> Javascript by
+				<a href="http://angularjs.org/">AngularsJs</a> et Design by <a
+					href="http://foundation.zurb.com/">Foundation</a>
+
+			</p>
+		</section>
+
+		<section class="large-3 columns contacts">
+			<h6></h6>
+
+			<ul class="inline-list">
+				<li><a href="http://formation-paris.cnam.fr/" target="_blank"><img
+						src="./images/cnam.png" /></a></li>
+				<li><a
+					href="http://fr.linkedin.com/pub/mathieu-bellange/54/90b/7a6"
+					target="_blank"><img src="./images/linkedin.png" /></a></li>
+				<li><a href='http://www.doyoubuzz.com/mathieu-bellange'><img
+						src='http://www.doyoubuzz.com/images/css/base/configbar/badges/badge_06_fr.gif'
+						title='CV Mathieu Bellange' alt='CV Mathieu Bellange' /></a></li>
+			</ul>
+
+		</section>
+	</footer>
+</body>
+</html>

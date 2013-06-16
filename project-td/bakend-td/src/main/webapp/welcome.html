@@ -1,20 +1,132 @@
 <!doctype html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Tennis Dream</title>
-  </head>
+<html lang="fr" ng-app>
+<head>
+<meta charset="utf-8">
+<title>Tennis Dream</title>
+<link rel="stylesheet" href="css/foundation.min.css">
+<link rel="stylesheet" href="css/foundation.css">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/app.css">
+<script src="lib/angular/angular.js"></script>
+<script src="js/controllers.js"></script>
+</head>
+<body ng-controller="ArticleListCtrl">
+	<header>
+		<div class="row">
+			<div class="large-12 columns">
+				<h1><a class="main-title" href="./welcome.html">Tennis Dream</a></h1>
+				<h4></h4>
+			</div>
+		</div>
+	</header>
+	<section id="mainContent" class="example">
+		<div class="row">
+			<div class="large-8 columns">
+				<h3>Les dernières offres de réduction</h3>
+			</div>
+			<div class="large-4 columns hide-for-small">
+				<p class="right">
+					<a href="#">Login</a> <a href="#"
+						class="small blue nice radius button">Sign Up</a>
+				</p>
+			</div>
+			<div class="large-4 columns show-for-small">
+				<p>
+					<a href="#">Login</a> <a href="#" class="">Sign Up</a>
+				</p>
+			</div>
+		</div>
 
-  <body>
+		<div class="row">
+			<div class="large-12 columns">
+				<ul class="block-grid four-up article">
+					<li ng-repeat="deal in deals"><a href="#"><img
+							src="http://placehold.it/240x300"></a>
+						<h5>
+							<a href="#">{{deal.article.nom}}</a>
+						</h5></li>
+				</ul>
+			</div>
+		</div>
 
-    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
-    <noscript>
-      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
-        Your web browser must have JavaScript enabled
-        in order for this application to display correctly.
-      </div>
-    </noscript>
+		<div class="row">
+			<hr>
+		</div>
 
+		<div class="row">
+			<div class="large-6 columns services">
+				<h4>Bienvenue sur le site en ligne de Tennis Dream</h4>
+				<p>
+					Vous avez ici une jolie description du site de tennis dream,
+					pourquoi et comment. <a href="#">Read More →</a>
+				</p>
+			</div>
+			<div class="large-6 columns services">
+				<h4>Services proposés par tennis Dream</h4>
+				<div class="row">
+					<div class="large-2 phone-one columns">
+						<a href="#"><img src="http://placehold.it/80x100"></a>
+					</div>
+					<div class="large-10 phone-three columns">
+						<h4>
+							<a href="./articles.html">Notre catalogue</a>
+						</h4>
+						<p>Consulter notre catalogue !</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-2 phone-one columns">
+						<a href="#"><img src="http://placehold.it/80x100"></a>
+					</div>
+					<div class="large-10 phone-three columns">
+						<h4>
+							<a href="#">Notre atelier de cordage</a>
+						</h4>
+						<p>Profitez du meilleur cordage de France</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-2 phone-one columns">
+						<a href="#"><img src="http://placehold.it/80x100"></a>
+					</div>
+					<div class="large-10 phone-three columns">
+						<h4>
+							<a href="#">Partenariat</a>
+						</h4>
+						<p>Profitez de nos partenariat avec les clubs de la région</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-  </body>
+	</section>
+	<footer class="row">
+		<section class="large-9 columns contacts">
+			<h6>
+				<strong>Développé par Mathieu Bellange</strong>
+			</h6>
+			<p>Site web développé pour le CNAM, UE NFE114 : Système
+				d'information et web.<br/>
+				<a href="http://www.w3.org/">Html5</a> Javascript by <a
+					href="http://angularjs.org/">AngularsJs</a> et Design by <a
+					href="http://foundation.zurb.com/">Foundation</a>
+
+			</p>
+		</section>
+
+		<section class="large-3 columns contacts">
+			<h6>
+			</h6>
+
+			<ul class="inline-list">
+				<li><a href="http://formation-paris.cnam.fr/" target="_blank"><img src="./images/cnam.png"/></a></li>
+				<li><a
+					href="http://fr.linkedin.com/pub/mathieu-bellange/54/90b/7a6"
+					target="_blank"><img src="./images/linkedin.png"/></a></li>
+				<li><a href='http://www.doyoubuzz.com/mathieu-bellange'><img src='http://www.doyoubuzz.com/images/css/base/configbar/badges/badge_06_fr.gif' title='CV Mathieu Bellange' alt='CV Mathieu Bellange'/></a></li>
+			</ul>
+
+		</section>
+	</footer>
+</body>
 </html>
