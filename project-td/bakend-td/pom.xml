@@ -163,6 +163,10 @@
 						<resource>
 							<directory>src/main/webapp</directory>
 						</resource>
+						<resource>
+							<directory>src/main/javascript</directory>
+							<targetPath>js</targetPath>
+						</resource>
 					</webResources>
 					<warName>TennisDream</warName>
 				</configuration>

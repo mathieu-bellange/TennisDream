@@ -68,7 +68,7 @@ function ArticleListCtrl($scope) {
 		},
 		"deal" : {},
 		"reviews" : {}
-	} ];
+	} ]
 	$scope.deals = [ {
 		"description" : "Réduction sur la babolat Storm II",
 		"beginning" : "15/05/2013",
