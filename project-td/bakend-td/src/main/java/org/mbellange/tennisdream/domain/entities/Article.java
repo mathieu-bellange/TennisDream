@@ -2,10 +2,19 @@ package org.mbellange.tennisdream.domain.entities;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Persistence;
 import javax.persistence.Transient;
 
@@ -44,23 +53,30 @@ public class Article extends PersistentEntity {
 	}
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@Column(name="NOM", length=60)
 	private String nom;
 	
+	@Column(name="REFERENCE", length=5)
 	private String reference;
 	
+	@Column(name="PRICE",precision=5, scale=2)
 	private float price;
 	
+	@Column(name="DESCRIPTION", length = 400)
 	private String description;
 	
-	@Transient
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="BRAND_ID")
 	private Brand brand;
 	
-	@Transient
+	@OneToOne(fetch = FetchType.LAZY, mappedBy="article",optional=true)
 	private Deal deal;
 
-	@Transient
+	@OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL,orphanRemoval=true)
+	@JoinColumn(name="ARTICLE_ID")
 	private Set<ArticleReview> articleReview = Sets.newHashSet();
 	
 	public Set<ArticleReview> getArticleReviews() {

@@ -3,8 +3,11 @@ package org.mbellange.tennisdream.domain.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -30,6 +33,7 @@ public class Deal extends PersistentEntity {
 	}
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
 	private String description;
@@ -40,7 +44,8 @@ public class Deal extends PersistentEntity {
 	
 	private float rate;
 	
-	@Transient
+	@OneToOne
+	@JoinColumn(name="DEAL_ID")
 	private Article article;
 
 	public long getId() {

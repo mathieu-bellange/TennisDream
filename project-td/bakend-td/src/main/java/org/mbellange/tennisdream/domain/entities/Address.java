@@ -1,6 +1,8 @@
 package org.mbellange.tennisdream.domain.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -30,6 +32,7 @@ public class Address extends PersistentEntity {
 	}
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
 	private int streetNumber;

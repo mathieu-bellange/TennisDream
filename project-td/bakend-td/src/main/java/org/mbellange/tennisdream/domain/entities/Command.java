@@ -4,8 +4,12 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -20,9 +24,12 @@ public class Command extends PersistentEntity {
 	private static final long serialVersionUID = 3405283674509899839L;
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@Transient
+	@ManyToMany
+	@JoinTable(name="CMD_ARTICLE", joinColumns={@JoinColumn(name="CMD_ID",referencedColumnName="ID")}, 
+				inverseJoinColumns={@JoinColumn(name="ARTICLE_ID", referencedColumnName="ID")})
 	private Set<Article> articles;
 	
 	private String user;

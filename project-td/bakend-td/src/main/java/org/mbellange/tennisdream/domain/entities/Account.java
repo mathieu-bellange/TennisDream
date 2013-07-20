@@ -1,8 +1,11 @@
 package org.mbellange.tennisdream.domain.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.OneToOne;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -30,6 +33,7 @@ public class Account extends PersistentEntity {
 	}
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
 	private String lastName;
@@ -38,7 +42,8 @@ public class Account extends PersistentEntity {
 	
 	private String mail;
 	
-	@Transient
+	@OneToOne
+	@Column(name="ADDRESS_ID")
 	private Address address;
 	
 	public long getId() {
